@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru" id="html">
+<head>
+    <meta charset=utf-8>
+    <title>Fox launcher download page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="root.css" rel="stylesheet">
+    <link href="fox.css" rel="stylesheet">
+</head>
+<body>
+    <img id="background" src="images/background.jpg" style="position: fixed; width: auto; height: auto; top: 0; bottom: 0; left: 0; right: 0; z-index: 0;" />
+    <div id="topbar" class="bg-fox d-flex align-items-center justify-content-between" style="z-index: 99;">
+        <div style="display: flex; align-items: center;">
+            <img class="logo" src="images/logo.png" height="46" style="padding: 7px;" />
+            <div class="logo-name" style="font-size: 2rem; font-weight: bold;">FOX LAUNCHER</div>
+        </div>
+        <div class="input-group">
+            <label class="input-group-text" for=""><i class="bi bi-translate"></i></label>
+            <select class="form-select" aria-label="Filter select" onchange="changeLanguage(this.options[this.selectedIndex].value)">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!--  PAGE CONTENT  -->
+
+
+    <div id="content" class="p-5" style="position: relative; top: 48px;">
+        <div class="d-flex justify-content-center" style="position: relative; top: 20px; padding-bottom: 40px; gap: 2rem;">
+            <div>
+                <h1 id="page-start-title" style="font-size: 5rem; font-weight: 400; color: white; opacity: 0; position: relative; margin-top: 80px;">FOX LAUNCHER</h1>
+                <h1 id="page-start-description" style="font-size: 2rem; font-weight: 300; color: white; opacity: 0; position: relative; margin-top: 80px;">Добро пожаловать в FoxLauncher — ваш универсальный игровой лаунчер, который объединяет в себе все необходимое для комфортного гейминга!</h1>
+                <button class="btn btn-fox" id="page-start-button-download" style="position: relative; margin-top: 80px; opacity: 0; color: white;" onclick="document.getElementById('five').scrollIntoView();">
+                    <span>Перейти к скачиванию</span>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+
+
+                <div id="page-start-social" style="position: relative; margin-top: 20px; opacity: 0;">
+                    <h4 id="page-start-social-title" style="color: white; position: relative; margin-top: 40px;">А вот ещё где нас можно найти</h4>
+
+                    <button class="btn btn-fox fs-5" onclick="javascript:window.open('https://www.youtube.com/redirect?event=channel_description&redir_token=QUFFLUhqbDNBb0dYWTkzYWthUU5EZnQyM0NjMFdiNnU5Z3xBQ3Jtc0ttTC0zVjhYMmxEX2NYVFF2SmVWbUpEQ05TOVdtU09UVjNwTzRUbFhmV3lDbDlfLTR4RGo1alAzMHhxeGpFVzBSWDlGRzFyT3hIX3VnWVFsVTRPUWI3bXNtbE50Tkg2MFRDcllDYndrUVVnZTRYWDBpRQ&q=https%3A%2F%2Fdiscord.gg%2FAWJthT799z', '_blank');" style="color: white;">
+                        <i class="bi bi-discord" style="font-style: normal"> Discord</i>
+                    </button>
+                    <button class="btn btn-fox fs-5" onclick="javascript:window.open('https://t.me/FOX_LAUNCHER_GROUP', '_blank');" style="color: white;">
+                        <i class="bi bi-telegram" style="font-style: normal"> Telegram</i>
+                    </button>
+                    <button class="btn btn-fox fs-5" onclick="javascript:window.open('https://youtube.com/@netmenu3?si=417UD2pwx4GkmBEP', '_blank');" style="color: white;">
+                        <i class="bi bi-youtube" style="font-style: normal"> Youtube</i>
+                    </button>
+                </div>
+            </div>
+            <!-- <img id="page-start-image" width="800" class="rounded" src="images/launcher_main.jpg" style="opacity: 0; box-shadow: 25px 25px 40px 40px rgba(0,0,0,0.35); aspect-ratio: 16/9; position: relative; height: fit-content; margin-top: 80px; transform: rotate3d(1, -1, 1, 15deg);" /> -->
+            <video loop muted autoplay id="page-start-video" width="800" class="rounded" style="opacity: 0; box-shadow: 25px 25px 40px 40px rgba(0,0,0,0.35); aspect-ratio: 16/9; position: relative; height: fit-content; margin-top: 80px; transform: rotate3d(1, -1, 1, 8deg);">
+                <source src="videos/launcher_video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <div class='line-icon'></div>
+
+        <h1 id="zero" style="color: white; position: relative; margin-top: 80px;">НАШИ ВОЗМОЖНОСТИ</h1>
+
+
+
+        <div id="one" class="card blur-card p-4" style="position: relative;">
+            <div class="card-body">
+                <div style="flex: 1">
+                    <h1><i class="bi bi-tag-fill"></i><span id="one-title">Бесплатные игры</span></h1>
+                    <h3 id="one-description" style="font-weight: 300;">В FoxLauncher вы найдете обширную библиотеку бесплатных игр на любой вкус. От захватывающих экшенов до увлекательных стратегий — каждый найдет что-то для себя!</h3>
+                </div>
+                <div style="flex: 1">
+                    <img class="rounded shadow-lg" src="images/launcher_main.jpg" style="aspect-ratio: 16/9; width: 100%;;" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="two" class="card blur-card p-4">
+            <div class="card-body">
+                <div style="flex: 1">
+                    <h1><i class="bi bi-palette-fill"></i><span id="two-title">Кастомизация профиля и интерфейса</span></h1>
+                    <h3 id="two-description" style="font-weight: 300;">Настройте свой профиль так, как вам нравится! Вы можете изменять аватары, темы и оформление интерфейса, чтобы создать уникальное пространство, отражающее вашу индивидуальность.</h3>
+                </div>
+                <div style="flex: 1">
+                    <img class="rounded shadow-lg" src="images/launcher_themes.jpg" style="aspect-ratio: 16/9; width: 100%;;" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="three" class="card blur-card p-4">
+            <div class="card-body">
+                <div style="flex: 1">
+                    <h1><i class="bi bi-people-fill"></i><span id="three-title">Общение с друзьями</span></h1>
+                    <h3 id="three-description" style="font-weight: 300;">FoxLauncher предлагает удобные инструменты для общения с друзьями. Создавайте группы, отправляйте сообщения и делитесь игровыми моментами, чтобы всегда оставаться на связи с вашими товарищами по играм.</h3>
+                </div>
+                <div style="flex: 1">
+                    <img class="rounded shadow-lg" src="images/launcher_friends.jpg" style="aspect-ratio: 16/9; width: 100%;;" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="four" class="card blur-card p-4">
+            <div class="card-body">
+                <div style="flex: 1">
+                    <h1><i class="bi bi-gear-fill"></i><span id="four-title">Добавление модов и игр</span></h1>
+                    <h3 id="four-description" style="font-weight: 300;">Расширяйте свои игровые возможности с помощью модов! FoxLauncher поддерживает интеграцию пользовательских модификаций, что позволяет вам изменять и улучшать свои любимые игры. Легко добавляйте новые игры в свою библиотеку и наслаждайтесь разнообразием контента.</h3>
+                </div>
+                <div style="flex: 1">
+                    <img class="rounded shadow-lg" src="images/launcher_mods.jpg" style="aspect-ratio: 16/9; width: 100%;" />
+                </div>
+            </div>
+        </div>
+
+        <div class='line-icon'></div>
+
+
+        <div id="five" class="card blur-card p-4">
+            <h1><i class="bi bi-file-earmark-arrow-down-fill pe-3"></i><span id="five-title">Скачать Fox Launcher</span></h1>
+            <div>
+                <h4 id="five-description" style="font-weight: 300;">Без смс и регистрации</h4>
+                <p class="fs-2"><i class="bi bi-download pe-2"></i><span id="fileSize"></span></p>
+                <p class="fs-2"><i class="bi bi-clock-history pe-2"></i>v1.0</p>
+
+                <a id="button-download" class="btn btn-fox" href="executable/FoxLauncher.exe" download style="width: 0%; white-space: nowrap;"><span>СКАЧАТЬ</span></a>
+            </div>
+        </div>
+
+
+
+        <h1 style="color: white; position: relative; margin-top: 80px;">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
+        <h4 style="color: white; font-style: italic;">Их много, надо уточнить</h4>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="scripts/logic.js"></script>
+    <script src="scripts/fileSize.js"></script>
+    <script src="scripts/translations.js"></script>
+</body>
+</html>
