@@ -100,7 +100,10 @@ $(window).scroll(function () {
     }
 });
 
+$(window).on("load", function (e) {
+    $("#background").width(window.innerWidth).height(window.innerHeight);
+});
+
 $(window).on("resize", function (e) {
-    console.log("resize");
     $("#background").width(window.innerWidth).height(window.innerHeight);
 });
