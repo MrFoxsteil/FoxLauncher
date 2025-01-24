@@ -2,12 +2,10 @@
 <html lang="ru" id="html">
 <head>
     <meta charset=utf-8>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fox launcher download page</title>
-    <link rel="icon" type="image/x-icon" href="Logo.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,13 +13,26 @@
     <link href="fox.css" rel="stylesheet">
 </head>
 <body>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" data-bs-theme="dark">
+        <div id="live-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="images/fox.png" class="rounded me-2" height="24">
+                <strong class="fs-4 me-auto">FOX LAUNCHER</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-message" class="toast-body text-white"></div>
+        </div>
+    </div>
+
+
+
     <img id="background" src="images/background.jpg" style="position: fixed; width: auto; height: auto; top: 0; bottom: 0; left: 0; right: 0; z-index: 0;" />
     <div id="topbar" class="bg-fox d-flex align-items-center justify-content-between" style="z-index: 99;">
         <div style="display: flex; align-items: center;">
             <img class="logo" src="images/logo.png" height="46" style="padding: 7px;" />
             <div class="logo-name" style="font-size: 2rem; font-weight: bold;">FOX LAUNCHER</div>
         </div>
-        <div class="input-group">
+        <div class="input-group" data-bs-theme="dark">
             <label class="input-group-text" for=""><i class="bi bi-translate"></i></label>
             <select class="form-select" aria-label="Filter select" onchange="changeLanguage(this.options[this.selectedIndex].value)">
                 <option value="ru">Русский</option>
@@ -37,9 +48,9 @@
     <div id="content" class="p-5" style="position: relative; top: 48px;">
         <div class="d-flex justify-content-center" style="position: relative; top: 20px; padding-bottom: 40px; gap: 2rem;">
             <div>
-                <h1 id="page-start-title" style="font-size: 5rem; font-weight: 400; color: white; opacity: 0; position: relative; margin-top: 80px;">FOX LAUNCHER</h1>
+                <h1 id="page-start-title" style="font-size: 5rem; font-weight: 700; color: white; opacity: 0; position: relative; margin-top: 80px;">FOX LAUNCHER</h1>
                 <h1 id="page-start-description" style="font-size: 2rem; font-weight: 300; color: white; opacity: 0; position: relative; margin-top: 80px;">Добро пожаловать в FoxLauncher — ваш универсальный игровой лаунчер, который объединяет в себе все необходимое для комфортного гейминга!</h1>
-                <button class="btn btn-fox" id="page-start-button-download" style="position: relative; margin-top: 80px; opacity: 0; color: white;" onclick="document.getElementById('five').scrollIntoView();">
+                <button class="btn btn-fox" id="page-start-button-download" style="position: relative; margin-top: 80px; opacity: 0; color: white;" onclick="scrollToAnchor('download');">
                     <span>Перейти к скачиванию</span>
                     <i class="bi bi-chevron-right"></i>
                 </button>
@@ -60,7 +71,7 @@
                 </div>
             </div>
             <!-- <img id="page-start-image" width="800" class="rounded" src="images/launcher_main.jpg" style="opacity: 0; box-shadow: 25px 25px 40px 40px rgba(0,0,0,0.35); aspect-ratio: 16/9; position: relative; height: fit-content; margin-top: 80px; transform: rotate3d(1, -1, 1, 15deg);" /> -->
-            <video loop muted autoplay id="page-start-video" width="800" class="rounded" style="opacity: 0; box-shadow: 25px 25px 40px 40px rgba(0,0,0,0.35); aspect-ratio: 16/9; position: relative; height: fit-content; margin-top: 80px; transform: rotate3d(1, -1, 1, 8deg);">
+            <video loop muted autoplay id="page-start-video" width="800" class="rounded">
                 <source src="videos/launcher_video.mp4" type="video/mp4">
             </video>
         </div>
@@ -129,26 +140,27 @@
         <div class='line-icon'></div>
 
 
-        <div id="five" class="card blur-card p-4">
-            <h1><i class="bi bi-file-earmark-arrow-down-fill pe-3"></i><span id="five-title">Скачать Fox Launcher</span></h1>
+        <div id="download" class="card blur-card p-4">
+            <h1><i class="bi bi-file-earmark-arrow-down-fill pe-3"></i><span id="download-title">Скачать Fox Launcher</span></h1>
             <div>
-                <h4 id="five-description" style="font-weight: 300;">Без смс и регистрации</h4>
-                <p class="fs-2"><i class="bi bi-download pe-2"></i><span id="fileSize"></span></p>
-                <p class="fs-2"><i class="bi bi-clock-history pe-2"></i>v1.0</p>
+                <h4 id="download-description" style="font-weight: 300;">Без смс и регистрации</h4>
+                <p class="fs-2"><i style="font-size: 2rem;" class="bi bi-download pe-3"></i><span id="fileSize"></span></p>
+                <p class="fs-2"><i style="font-size: 2rem;" class="bi bi-clock-history pe-3"></i>v1.0</p>
 
-                <a id="button-download" class="btn btn-fox" href="executable/FoxLauncher.exe" download style="width: 0%; white-space: nowrap;"><span>СКАЧАТЬ</span></a>
+                <div class="d-flex" style="gap: 0.5rem;">
+                    <a id="button-download" class="btn btn-fox" onclick="showToast('downloadStarted');" href="/fox_launcher/executable/Kurochkin.png" download style="width: 0%; white-space: nowrap;"><span>СКАЧАТЬ</span></a>
+                    <a id="button-download-share" class="btn btn-fox" onclick="shareDownload()" style="white-space: nowrap;"><i class="bi bi-share-fill" style="opacity: 0; font-size: inherit; padding-inline: 4px;"></i></a>
+                </div>
             </div>
         </div>
 
 
-
-        <h1 style="color: white; position: relative; margin-top: 80px;">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
-        <h4 style="color: white; font-style: italic;">Их много, надо уточнить</h4>
-
+        <footer id="footer" class="text-center text-white-50"></footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="scripts/toast.js"></script>
     <script src="scripts/logic.js"></script>
     <script src="scripts/fileSize.js"></script>
     <script src="scripts/translations.js"></script>
