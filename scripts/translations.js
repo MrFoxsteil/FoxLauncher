@@ -14,7 +14,9 @@ const translations = {
         modsDescription: "Expand your gaming experience with mods! FoxLauncher supports the integration of user modifications, allowing you to change and improve your favorite games. Easily add new games to your library and enjoy a variety of content.",
         downloadLauncher: "Download Fox Launcher",
         downloadLauncherDescription: "No SMS or registration",
-        download: "Download"
+        download: "Download",
+        linkCopied: "Link copied to clipboard",
+        downloadStarted: "Download started. Thanks for using Fox Launcher!"
     },
     ru: {
         goToDownload: "Перейти к скачиванию",
@@ -30,15 +32,16 @@ const translations = {
         mods: "Добавление модов и игр",
         modsDescription: "Расширяйте свои игровые возможности с помощью модов! FoxLauncher поддерживает интеграцию пользовательских модификаций, что позволяет вам изменять и улучшать свои любимые игры. Легко добавляйте новые игры в свою библиотеку и наслаждайтесь разнообразием контента.",
         downloadLauncher: "Скачать Fox Launcher",
-        download: "Скачать"
+        downloadLauncherDescription: "Без смс и регистрации",
+        download: "Скачать",
+        linkCopied: "Ссылка скопирована в буфер обмена",
+        downloadStarted: "Загрузка началась. Спасибо за использование Fox Launcher!"
     }
 };
 
 function changeLanguage(lang) {
-    // Change the lang attribute of the html tag
     document.getElementById('html').setAttribute('lang', lang);
 
-    // Update the content based on the selected language
     document.querySelector('#page-start-button-download span').textContent = translations[lang].goToDownload;
     document.querySelector('#page-start-description').textContent = translations[lang].description;
     document.querySelector('#page-start-social-title').textContent = translations[lang].socialTitle;
@@ -51,7 +54,7 @@ function changeLanguage(lang) {
     document.querySelector('#three-description').textContent = translations[lang].friendsDescription;
     document.querySelector('#four-title').textContent = translations[lang].mods;
     document.querySelector('#four-description').textContent = translations[lang].modsDescription;
-    document.querySelector('#five-title').textContent = translations[lang].downloadLauncher;
-    document.querySelector('#five-description').textContent = translations[lang].downloadLauncherDescription;
+    document.querySelector('#download-title').textContent = translations[lang].downloadLauncher;
+    document.querySelector('#download-description').textContent = translations[lang].downloadLauncherDescription;
     document.querySelector('#button-download').textContent = translations[lang].download;
 }
