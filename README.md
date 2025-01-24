@@ -17,5 +17,5 @@
 
 ## Установка
 
-1. Загрузите установщик лаунчера с нашего сайта [<img src="images/fox.png" width="24" />](https://mrfoxsteil.github.io/FoxLauncher)
+1. Загрузите установщик лаунчера с нашего сайта [FOX LAUNCHER <img src="images/fox.png" width="24" />](https://mrfoxsteil.github.io/FoxLauncher)
 2. Запустите установщик.
